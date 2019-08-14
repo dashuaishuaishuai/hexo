@@ -1,8 +1,8 @@
 ---
-title: docker安装及使用
+title: Docker安装及使用
 date: 2019-08-05 16:44:05
 tags: docker
-categories: docker
+categories: 容器及虚拟化技术
 ---
 
 
@@ -61,18 +61,32 @@ EPEL (Extra Packages for Enterprise Linux)是基于Fedora的一个项目，为�
 
 
 
-#### docker安装
+#### docker常用命令
 
-启动： service docker start
+查看docker版本
 
-状态： service docker status
+    docker version
 
-重启： service docker restart
+启动
+    
+    service docker start
 
-停止： service docker stop
+状态
+    
+    service docker status
+
+重启
+    
+    service docker restart
+
+停止
+    
+    service docker stop
 
 
-拉取镜像：docker pull gitlab/gitlab-ce:latest
+拉取镜像
+
+    docker pull gitlab/gitlab-ce:latest
 
 删除镜像：
 
@@ -84,8 +98,10 @@ EPEL (Extra Packages for Enterprise Linux)是基于Fedora的一个项目，为�
     docker rmi $(docker images -q)
     
 查看docker启动的容器列表
+    
     docker ps
 查看docker创建的所有容器
+    
     docker ps -a
 
 容器启动停止
@@ -102,3 +118,8 @@ EPEL (Extra Packages for Enterprise Linux)是基于Fedora的一个项目，为�
     docker stop 容器名 或者 容器id
     docker rm 容器名 或者 容器id
     docker rm $(docker ps -a -q)  删除所有容器
+
+查找镜像
+    
+    docker search 关键字  可以检索 (搜索) Docker Hub 官网上提供的所有镜像
+    eg: docker search mysql 查找mysql
